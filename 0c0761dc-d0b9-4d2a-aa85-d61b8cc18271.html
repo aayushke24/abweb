@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <base target="_self">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adarsh Collection - Premium Men's Fashion in Kharar</title>
+    <meta name="description" content="Trendy, affordable and high-quality men's clothing store in Kharar, Punjab. Casual wear, party wear, shirts, jeans, jackets, ethnic wear and winter collection.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#1a1a1a",
+                        secondary: "#333333",
+                        accent: "#d4af37",
+                        dark: "#0a0a0a"
+                    },
+                    fontFamily: {
+                        heading: ["Playfair Display", "serif"],
+                        body: ["Inter", "sans-serif"]
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        .fade-in {
+            animation: fadeIn 0.8s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .slide-up {
+            animation: slideUp 0.6s ease-out;
+        }
+        @keyframes slideUp {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-dark text-white font-body">
+    <!-- WhatsApp Floating Button -->
+    <div class="fixed bottom-6 right-6 z-50">
+        <a href="https://wa.me/+919876543210" target="_blank" class="bg-green-600 hover:bg-green-700 text-white p-4 rounded-full shadow-lg transition-all duration-300 hover:scale-110">
+            <i class="fab fa-whatsapp text-2xl"></i>
+        </a>
+    </div>
+
+    <!-- Header/Navigation -->
+    <header class="bg-primary border-b border-secondary sticky top-0 z-40">
+        <nav class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center gap-2">
+                    <div class="w-10 h-10 bg-accent rounded-full"></div>
+                    <h1 class="text-2xl font-heading">Adarsh Collection</h1>
+                </div>
+                <ul id="nav-list" class="hidden md:flex gap-8"></ul>
+                <button id="mobile-menu-btn" class="md:hidden text-2xl">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="md:hidden mt-4 hidden">
+                <ul id="mobile-nav-list"></ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative bg-gradient-to-br from-primary to-dark py-16 md:py-24">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl fade-in">
+                <h2 class="text-4xl md:text-5xl font-heading mb-4">Adarsh Collection – Premium Men's Fashion in Kharar</h2>
+                <p class="text-gray-300 text-lg mb-8">Trendy, affordable and high-quality clothing for every occasion</p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#collection" class="bg-accent hover:bg-yellow-600 text-black px-8 py-3 rounded-full font-semibold transition duration-300 slide-up">View Collection</a>
+                    <a href="https://wa.me/+919876543210" target="_blank" class="bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-full font-semibold transition duration-300 slide-up">Contact on WhatsApp</a>
+                </div>
+            </div>
+            <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="relative overflow-hidden rounded-lg">
+                    <img src="https://picsum.photos/600/400?random=11" alt="Men's fashion suit" class="w-full h-full object-cover hover:scale-105 transition duration-700" loading="lazy">
+                </div>
+                <div class="relative overflow-hidden rounded-lg">
+                    <img src="https://picsum.photos/600/400?random=12" alt="Casual men's clothing" class="w-full h-full object-cover hover:scale-105 transition duration-700" loading="lazy">
+                </div>
+                <div class="relative overflow-hidden rounded-lg">
+                    <img src="https://picsum.photos/600/400?random=13" alt="Party wear collection" class="w-full h-full object-cover hover:scale-105 transition duration-700" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us -->
+    <section class="py-12 bg-secondary">
+        <div class="container mx-auto px-4">
+            <h3 class="text-3xl font-heading mb-6 text-center">About Us</h3>
+            <div class="max-w-2xl mx-auto text-center text-gray-300">
+                <p>Adarsh Collection is a trusted local fashion shop in Kharar, Punjab, offering trendy clothing for men including casual wear, party wear and seasonal fashion. We provide quality fabrics at affordable prices with friendly customer service.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Categories -->
+    <section class="py-16 bg-primary">
+        <div class="container mx-auto px-4">
+            <h3 class="text-3xl font-heading mb-8 text-center">Product Categories</h3>
+            <div id="category-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6"></div>
+        </div>
+    </section>
+
+    <!-- Featured Collection -->
+    <section id="collection" class="py-16 bg-dark">
+        <div class="container mx-auto px-4">
+            <h3 class="text-3xl font-heading mb-8 text-center">Featured Collection</h3>
+            <div id="featured-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"></div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="py-16 bg-secondary">
+        <div class="container mx-auto px-4">
+            <h3 class="text-3xl font-heading mb-8 text-center">Why Choose Us</h3>
+            <div id="benefits-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"></div>
+        </div>
+    </section>
+
+    <!-- Customer Reviews -->
+    <section class="py-16 bg-primary">
+        <div class="container mx-auto px-4">
+            <h3 class="text-3xl font-heading mb-8 text-center">Customer Reviews</h3>
+            <div id="reviews-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+        </div>
+    </section>
+
+    <!-- Store Location -->
+    <section class="py-16 bg-dark">
+        <div class="container mx-auto px-4">
+            <h3 class="text-3xl font-heading mb-8 text-center">Store Location</h3>
+            <div class="max-w-3xl mx-auto">
+                <div class="bg-gray-800 rounded-lg p-4 mb-6">
+                    <div class="h-64 bg-gray-700 rounded flex items-center justify-center">
+                        <p class="text-gray-400">Map Embed - Kharar, Punjab Location</p>
+                    </div>
+                    <p class="mt-4 text-gray-300 text-center">Find us in the heart of Kharar, easily accessible from all major areas.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="py-16 bg-secondary">
+        <div class="container mx-auto px-4">
+            <h3 class="text-3xl font-heading mb-8 text-center">Contact Us</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div>
+                    <div class="space-y-6">
+                        <div class="flex items-center gap-4">
+                            <i class="fas fa-phone text-accent text-xl"></i>
+                            <p class="text-lg">Phone: +91 98765 43210</p>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <i class="fab fa-whatsapp text-green-500 text-xl"></i>
+                            <p class="text-lg">WhatsApp: +91 98765 43210</p>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <i class="fas fa-map-marker-alt text-accent text-xl"></i>
+                            <p class="text-lg">Address: Main Market, Kharar, Punjab 140301</p>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <i class="fas fa-clock text-accent text-xl"></i>
+                            <p class="text-lg">Business Hours: Mon-Sat 10:00 AM - 8:00 PM</p>
+                        </div>
+                    </div>
+                    <a href="https://wa.me/+919876543210" target="_blank" class="mt-8 bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-full font-semibold inline-block transition duration-300">Message on WhatsApp</a>
+                </div>
+                <div>
+                    <form class="bg-gray-800 rounded-lg p-6 space-y-4">
+                        <h4 class="text-xl font-heading mb-4">Quick Inquiry</h4>
+                        <input type="text" placeholder="Your Name" class="w-full p-3 bg-gray-700 rounded focus:outline-none focus:ring-2 focus:ring-accent">
+                        <input type="tel" placeholder="Phone Number" class="w-full p-3 bg-gray-700 rounded focus:outline-none focus:ring-2 focus:ring-accent">
+                        <textarea placeholder="Your Message" rows="4" class="w-full p-3 bg-gray-700 rounded focus:outline-none focus:ring-2 focus:ring-accent"></textarea>
+                        <button type="submit" class="bg-accent hover:bg-yellow-600 text-black px-6 py-3 rounded font-semibold w-full transition duration-300">Send Inquiry</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary border-t border-secondary py-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h4 class="text-xl font-heading mb-4">Adarsh Collection</h4>
+                    <p class="text-gray-400">Premium men's fashion store in Kharar, Punjab.</p>
+                </div>
+                <div>
+                    <h4 class="text-xl font-heading mb-4">Quick Links</h4>
+                    <ul id="footer-links"></ul>
+                </div>
+                <div>
+                    <h4 class="text-xl font-heading mb4">Follow Us</h4>
+                    <ul id="social-links" class="flex gap-4"></ul>
+                </div>
+            </div>
+            <div class="mt-8 text-center text-gray-500">
+                <p>&copy; 2023 Adarsh Collection. All rights reserved.</p>
+            </div5>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Data Layer
+        const navigationItems = [
+            { "label": "Home", "href": "#" },
+            { "label": "Categories", "href": "#categories" },
+            { "label": "Collection", "href": "#collection" },
+            { "label": "Reviews", "href": "#reviews" },
+            { "label": "Contact", "href": "#contact" }
+        ];
+
+        const categories = [
+            { "name": "T-Shirts", "img": "https://picsum.photos/300/300?random=21", "alt": "Men's t-shirts collection" },
+            { "name": "Shirts", "img": "https://picsum.photos/300/300?random=22", "alt": "Formal and casual shirts" },
+            { "name": "Jeans", "img": "https://picsum.photos/300/300?random=23", "alt": "Denim jeans for men" },
+            { "name": "Jackets", "img": "https://picsum.photos/300/300?random=24", "alt": "Jackets and outerwear" },
+            { "name": "Ethnic Wear", "img": "https://picsum.photos/300/300?random=25", "alt": "Traditional ethnic clothing" },
+            { "name": "Winter Collection", "img": "https://picsum.photos/300/300?random=26", "alt": "Winter clothing and sweaters" }
+        ];
+
+        const featuredProducts = [
+            { "name": "Premium Suit", "price": "₹2999", "img": "https://picsum.photos/400/500?random=31", "alt": "Black premium suit" },
+            { "name": "Casual T-Shirt", "price": "₹599", "img": "https://picsum.photos/400/500?random=32", "alt": "Cotton casual t-shirt" },
+            { "name": "Denim Jeans", "price": "₹1299", "img": "https://picsum.photos/400/500?random=33", "alt": "Blue denim jeans" },
+            { "name": "Winter Jacket", "price": "₹1999", "img": "https://picsum.photos/400/500?random=34", "alt": "Warm winter jacket" },
+            { "name": "Formal Shirt", "price": "₹899", "img": "https://picsum.photos/400/500?random=35", "alt": "White formal shirt" },
+            { "name": "Party Wear", "price": "₹2499", "img": "https://picsum.photos/400/500?random=36", "alt": "Stylish party outfit" },
+            { "name": "Ethnic Kurta", "price": "₹1499", "img": "https://picsum.photos/400/500?random=37", "alt": "Traditional kurta" },
+            { "name": "Sports Wear", "price": "₹799", "img": "https://picsum.photos/400/500?random=38", "alt": "Comfortable sports clothing" }
+        ];
+
+        const benefits = [
+            { "title": "Affordable prices", "icon": "fas fa-tag", "desc": "Best value for money with competitive pricing" },
+            { "title": "Latest fashion trends", "icon": "fas fa-star", "desc": "Always updated with current fashion styles" },
+            { "title": "Quality fabrics", "icon": "fas fa-thumbs-up", "desc": "Premium materials and durable construction" },
+            { "title": "Friendly customer service", "icon": "fas fa-users", "desc": "Personalized assistance and support" }
+        ];
+
+        const reviews = [
+            { "name": "Rajesh Kumar", "text": "Best clothing store in Kharar! Quality is excellent and prices are reasonable.", "rating": 5 },
+            { "name": "Amit Singh", "text": "Found perfect party wear for my wedding. Staff was very helpful.", "rating": 5 },
+            { "name": "Vikram Sharma", "text": "Regular customer here. Their winter collection is warm and stylish.", "rating": 4 },
+            { "name": "Sanjay Patel", "text": "Great variety of shirts and jeans. Will recommend to friends.", "rating": 5 },
+            { "name": "Mohit Gupta", "text": "Affordable ethnic wear collection. Very satisfied with purchase.", "rating": 4 },
+            { "name": "Deepak Mehta", "text": "Quick service and good quality fabrics. Happy with their t-shirts.", "rating": 5 }
+        ];
+
+        const footerLinks = [
+            { "label": "Home", "href": "#" },
+            { "label": "Categories", "href": "#categories" },
+            { "label": "Collection", "href": "#collection" },
+            { "label": "About", "href": "#about" },
+            { "label": "Contact", "href": "#contact" }
+        ];
+
+        const socialLinks = [
+            { "icon": "fab fa-facebook", "href": "#", "label": "Facebook" },
+            { "icon": "fab fa-instagram", "href": "#", "label": "Instagram" },
+            { "icon": "fab fa-twitter", "href": "#", "label": "Twitter" }
+        ];
+
+        // Reusable Render Functions
+        function renderNavItems(items) {
+            return items.map(item => "<li><a href=\"" + item.href + "\" class=\"hover:text-accent transition duration-300\">" + item.label + "</a></li>").join("");
+        }
+
+        function renderCategories(items) {
+            return items.map(item => "<div class=\"group cursor-pointer\"><div class=\"relative overflow-hidden rounded-lg mb-2\"><img src=\"" + item.img + "\" alt=\"" + item.alt + "\" class=\"w-full h-48 object-cover group-hover:scale-105 transition duration-700\" loading=\"lazy\"></div><h4 class=\"text-center font-semibold\">" + item.name + "</h4></div>").join("");
+        }
+
+        function renderFeaturedProducts(items) {
+            return items.map(item => "<div class=\"bg-gray-800 rounded-lg overflow-hidden group\"><div class=\"relative\"><img src=\"" + item.img + "\" alt=\"" + item.alt + "\" class=\"w-full h-64 object-cover group-hover:scale-105 transition duration-700\" loading=\"lazy\"><div class=\"absolute bottom-0 right-0 bg-accent text-black px-3 py-1 font-bold\">" + item.price + "</div></div><div class=\"p-4\"><h4 class=\"font-semibold\">" + item.name + "</h4></div></div>").join("");
+        }
+
+        function renderBenefits(items) {
+            return items.map(item => "<div class=\"text-center\"><div class=\"text-accent text-3xl mb-3\"><i class=\"" + item.icon + "\"></i></div><h4 class=\"font-semibold mb-2\">" + item.title + "</h4><p class=\"text-gray-300\">" + item.description + "</p></div>").join("");
+        }
+
+        function renderReviews(items) {
+            return items.map(item => "<div class=\"bg-gray-800 rounded-lg p-6\"><div class=\"flex items-center gap-2 mb-3\">" + Array(item.rating).fill("<i class=\"fas fa-star text-yellow-400\"></i>").join("") + "</div><p class=\"text-gray-300 mb-4\">" + item.text + "</p><p class=\"font-semibold\">" + item.name + "</p></div>").join("");
+        }
+
+        function renderFooterLinks(items) {
+            return items.map(item => "<li class=\"mb-2\"><a href=\"" + item.href + "\" class=\"text-gray-400 hover:text-accent transition duration-300\">" + item.label + "</a></li>").join("");
+        }
+
+        function renderSocialLinks(items) {
+            return items.map(item => "<li><a href=\"" + item.href + "\" class=\"text-gray-400 hover:text-accent text-2xl transition duration-300\"><i class=\"" + item.icon + "\"></i></a></li>").join("");
+        }
+
+        // DOM Injection
+        document.getElementById("nav-list").innerHTML = renderNavItems(navigationItems);
+        document.getElementById("mobile-nav-list").innerHTML = renderNavItems(navigationItems);
+        document.getElementById("category-grid").innerHTML = renderCategories(categories);
+        document.getElementById("featured-grid").innerHTML = renderFeaturedProducts(featuredProducts);
+        document.getElementById("benefits-grid").innerHTML = renderBenefits(benefits);
+        document.getElementById("reviews-grid").innerHTML = renderReviews(reviews);
+        document.getElementById("footer-links").innerHTML = renderFooterLinks(footerLinks);
+        document.getElementById("social-links").innerHTML = renderSocialLinks(socialLinks);
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+        const mobileMenu = document.getElementById("mobile-menu");
+        mobileMenuBtn.addEventListener("click", function() {
+            mobileMenu.classList.toggle("hidden");
+        });
+
+        // Navigation Smooth Scroll
+        document.addEventListener("click", function(event) {
+            const link = event.target.closest("a[href^='#']");
+            if (!link) return;
+            event.preventDefault();
+            const targetId = link.getAttribute("href");
+            if (targetId === "#") {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+                return;
+            }
+            const target = document.querySelector(targetId);
+            if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
+            if (mobileMenu && !mobileMenu.classList.contains("hidden")) {
+                mobileMenu.classList.add("hidden");
+            }
+        });
+
+        // Form Submission Handler
+        const contactForm = document.querySelector("form");
+        if (contactForm) {
+            contactForm.addEventListener("submit", function(event) {
+                event.preventDefault();
+                alert("Inquiry sent! We'll contact you shortly.");
+                contactForm.reset();
+            });
+        }
+
+        // Animate elements on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: "0px 0px -50px 0px"
+        };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("slide-up");
+                }
+            });
+        }, observerOptions);
+
+        // Observe sections
+        document.querySelectorAll("section").forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
